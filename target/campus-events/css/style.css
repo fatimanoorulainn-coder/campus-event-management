@@ -1,0 +1,259 @@
+/* ---------- Search Form Enhancements ---------- */
+.search-form .input-group {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.search-form .input-group:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.1);
+}
+
+.search-form .input-group-text {
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    padding-left: 20px;
+}
+
+.search-form .form-control {
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    padding: 14px 20px;
+    font-size: 1rem;
+}
+
+.search-form .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+.search-form .form-control:focus {
+    box-shadow: none;
+    background: transparent;
+}
+
+.search-form .btn {
+    border: none;
+    border-radius: 0;
+    padding: 14px 32px;
+    font-weight: 600;
+    background: var(--primary-color);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.search-form .btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.02);
+}
+
+/* ---------- Category Filter Buttons ---------- */
+.btn-outline-primary.rounded-pill {
+    border-width: 2px;
+    padding: 8px 24px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary.rounded-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.2);
+}
+
+.btn-primary.rounded-pill {
+    padding: 8px 24px;
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.3);
+}
+
+/* ---------- Event Image Overlay ---------- */
+.event-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.event-image-wrapper .event-card-img {
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image-wrapper .event-card-img {
+    transform: scale(1.05);
+}
+
+.event-overlay {
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.8));
+    pointer-events: none;
+}
+
+/* ---------- Badge Enhancements ---------- */
+.badge.bg-opacity-75 {
+    backdrop-filter: blur(4px);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.badge.bg-primary.bg-opacity-75 {
+    background: rgba(108, 99, 255, 0.8) !important;
+}
+
+.badge.bg-success.bg-opacity-75 {
+    background: rgba(78, 205, 196, 0.8) !important;
+}
+
+.badge.bg-danger.bg-opacity-75 {
+    background: rgba(255, 107, 107, 0.8) !important;
+}
+
+/* ---------- Progress Bar Enhancements ---------- */
+.progress {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    height: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-bar.bg-danger {
+    background: var(--secondary-color) !important;
+}
+
+/* ---------- View Toggle Buttons ---------- */
+.btn-group .btn-outline-primary {
+    border-width: 2px;
+    padding: 6px 14px;
+}
+
+.btn-group .btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* ---------- Event Card List View ---------- */
+[data-view="list"] .event-image-wrapper {
+    height: 200px;
+}
+
+[data-view="list"] .event-image-wrapper .event-card-img {
+    height: 200px;
+}
+
+@media (min-width: 768px) {
+    [data-view="list"] .event-item .event-card {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    [data-view="list"] .event-item .event-image-wrapper {
+        width: 300px;
+        height: auto;
+        flex-shrink: 0;
+    }
+    
+    [data-view="list"] .event-item .event-image-wrapper .event-card-img {
+        height: 100%;
+        width: 100%;
+    }
+    
+    [data-view="list"] .event-item .p-3 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+/* ---------- Loading Animation for Cards ---------- */
+.event-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.event-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Responsive Search ---------- */
+@media (max-width: 576px) {
+    .search-form .input-group {
+        border-radius: 16px;
+        flex-wrap: wrap;
+    }
+    
+    .search-form .input-group .form-control {
+        border-radius: 16px 16px 0 0;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+    
+    .search-form .input-group .btn {
+        border-radius: 0 0 16px 16px;
+        width: 100%;
+        padding: 12px;
+    }
+    
+    .search-form .input-group .input-group-text {
+        display: none;
+    }
+    
+    .btn-outline-primary.rounded-pill,
+    .btn-primary.rounded-pill {
+        font-size: 0.85rem;
+        padding: 6px 16px;
+    }
+    
+    .glass-card.p-4.p-md-5 {
+        padding: 20px !important;
+    }
+}
+
+/* ---------- Smooth Scroll ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ---------- Loading Skeleton Animation ---------- */
+.skeleton-wrapper {
+    animation: shimmer 1.5s infinite;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.05) 25%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(255, 255, 255, 0.05) 75%
+    );
+    background-size: 200% 100%;
+    border-radius: 12px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* ---------- Toast Animation ---------- */
+.toast {
+    animation: slideInUp 0.5s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
